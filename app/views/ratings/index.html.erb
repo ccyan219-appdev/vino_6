@@ -18,7 +18,7 @@
 
       <% @ratings.each do |rating| %>
       <tr>
-        <td><%= rating.wine_id %></td>
+        <td><%= rating.wine.image_url %></td>
         <td><%= rating.user_id %></td>
         <td><%= rating.rating %></td>
         <td><%= rating.comments %></td>
