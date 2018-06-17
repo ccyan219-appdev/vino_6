@@ -18,8 +18,20 @@
 
       <% @ratings.each do |rating| %>
       <tr>
-        <td><%= rating.wine.image_url %></td>
-        <td><%= rating.user.email %></td>
+        <td>
+          <% if rating.wine.present? %>
+            <a href="/wines/<%= rating.wine.id %>">
+              <%= rating.wine.image_url %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if rating.user.present? %>
+            <a href="/users/<%= rating.user.id %>">
+              <%= rating.user.email %>
+            </a>
+          <% end %>
+        </td>
         <td><%= rating.rating %></td>
         <td><%= rating.comments %></td>
         <td>
